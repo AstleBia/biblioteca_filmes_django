@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="d-flex justify-content-center">
-    <h1>Filmes Populares</h1>
-</div>
 {% for filme in filmes %}
 <div class="card">
     <div class="card-body">
@@ -12,6 +9,9 @@
         <a href="#" class="btn btn-secondary">Adicionar</a> <!--TODO: Adicionar filme a sua lista de filmes, e poder dar uma nota e review-->
     </div>
 </div>
+{% empty %}
+<div class="d-flex justify-content-center">
+    <h3>Nenhum Filme Encontrado</h3>
+</div>
 {% endfor %}
-
 {% endblock content %}
