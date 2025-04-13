@@ -13,10 +13,10 @@
                 <a href="#" class="navbar-brand">Biaboxd</a>
                 <ul class="navbar-nav me-auto d-flex flex-row">
                     <li class="nav-item me-3">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link" href="#">Meus filmes</a>
+                        <a class="nav-link" href="{% url 'lista_filmes' %}">Meus filmes</a>
                     </li>
                 </ul>
                 <form class="d-flex"" method = "get" action="{% url 'busca_filmes' %}"> <!--TODO: Adicionar a action para fazer a pesquisa-->

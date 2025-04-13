@@ -9,7 +9,7 @@
     <div class="card-body">
         <h5 class="card-title">{{ filme.titulo }}</h5>
         <p class="card-text">{{ filme.descricao }}</p>
-        <a href="#" class="btn btn-secondary">Adicionar</a> <!--TODO: Adicionar filme a sua lista de filmes, e poder dar uma nota e review-->
+        <a href="{% url 'adicionar_filme' filme.titulo %}" class="btn btn-secondary">Adicionar</a>
     </div>
 </div>
 {% endfor %}
