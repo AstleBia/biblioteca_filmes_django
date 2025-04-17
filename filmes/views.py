@@ -60,7 +60,7 @@ def adicionar_filme(request, filme_id):
             form.save()
             return redirect("lista_filmes")
     else:
-        form = FormFilme(initial={'titulo':titulo})
+        form = FormFilme(initial={'titulo':titulo["titulo"]})
 
     return render(request,'adicionar_filme.html',context={"form":form})
 

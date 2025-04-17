@@ -10,9 +10,13 @@
         <h5 class="card-title">{{ filme.titulo }}</h5>
         <p class="card-text">{{ filme.descricao }}</p>
         {% for filme_visto in filmes_vistos %}
-            {% if filme_visto.id == filme.id and not filme_visto.visto %}
+            {% if filme_visto.id == filme.id and filme_visto.visto %}
+                <span class="badge text-bg-success">Visto</span>
+            {% else %}
                 <a href="{% url 'adicionar_filme' filme.id %}" class="btn btn-secondary">Adicionar</a>
             {% endif %}
+        {% empty %}
+            <a href="{% url 'adicionar_filme' filme.id %}" class="btn btn-secondary">Adicionar</a>
         {% endfor %}
     </div>
 </div>
