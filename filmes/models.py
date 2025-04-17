@@ -15,6 +15,7 @@ class Filme(models.Model):
     visto = models.BooleanField(default=False)
     nota = models.IntegerField(choices = NOTA_CHOICES)
     review = models.TextField(blank=True, null=True)
+    filme_id = models.IntegerField(null = False)
 
     def __str__(self):
         return self.titulo
