@@ -11,6 +11,7 @@
         <p class="card-text">Review: {{ filme.review }}</p>
         <p class="card-text">Nota: {{ filme.nota }}/5</p>
         <a class="btn btn-outline-primary" href="{% url 'editar_filme' filme.filme_id %}">Editar</a>
+        <a href="{% url 'deletar_filme' filme.filme_id %}" class="btn btn-outline-danger">Excluir</a>
     </div>
 </div>
 {% empty %}

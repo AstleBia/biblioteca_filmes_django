@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <h1 class="mb-3 text-danger">Excluir Filme</h1>
+    <h3 class="mb-3">Deseja excluir esse filme?</h3>
+    <p class="fw-bold">{{ filme.titulo }}</p>
+</div>
+<div class="d-flex justify-content-center">
+    <form method="post" class="d-inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+    <a class="btn btn-secondary" href="{% url 'lista_filmes' %}">Cancelar</a>
+</div>
+{% endblock content %}

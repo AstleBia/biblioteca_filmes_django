@@ -79,3 +79,11 @@ def editar_filme(request, filme_id):
         form = FormFilme(instance=filme, initial={'nota':None, 'review':''})
 
     return render(request,'editar_filme.html',context = {"form":form})
+
+def deletar_filme(request, filme_id):
+    filme = get_object_or_404(Filme, filme_id=filme_id)
+    if request.method == 'POST':
+        filme.delete()
+        return redirect("lista_filmes")
+    
+    return render(request, 'deletar_filme.html', context = {'filme': filme})
