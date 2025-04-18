@@ -16,9 +16,9 @@ def listar_filmes_populares(request):
     filmes = data["results"]
     filmes_detalhes = [{"titulo":filme["title"], "descricao":filme["overview"],"id": filme["id"]} for filme in filmes]
     filmes_vistos = Filme.objects.all()
-    filmes_vistos_detalhes = [{"visto":filme.visto, "id": filme.filme_id} for filme in filmes_vistos]
+    id_filmes_vistos = [filme_visto.filme_id for filme_visto in filmes_vistos]
 
-    return render(request,"home.html", context={"filmes":filmes_detalhes, "filmes_vistos": filmes_vistos_detalhes})
+    return render(request,"home.html", context={"filmes":filmes_detalhes, "id_filmes_vistos": id_filmes_vistos})
 
 def buscar_filmes_api(nome_filme):
     url = f"https://api.themoviedb.org/3/search/movie?query={nome_filme}&include_adult=false&language=pt-BR&page=1"
