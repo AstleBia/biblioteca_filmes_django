@@ -36,4 +36,5 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 6. Rode o projeto
+
 ` python manage.py runserver `
