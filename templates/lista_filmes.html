@@ -10,6 +10,7 @@
         <h5 class="card-title">{{ filme.titulo }}</h5>
         <p class="card-text">Review: {{ filme.review }}</p>
         <p class="card-text">Nota: {{ filme.nota }}/5</p>
+        <a class="btn btn-outline-primary" href="{% url 'editar_filme' filme.filme_id %}">Editar</a>
     </div>
 </div>
 {% empty %}
