@@ -35,8 +35,8 @@ def buscar_filmes_api(nome_filme):
 def buscar_filmes(request):
     nome_filme = request.GET.get('q')
     filmes_vistos = Filme.objects.all()
-    filmes_vistos_detalhes = [{"visto":filme.visto, "id": filme.filme_id} for filme in filmes_vistos]
-    return render(request, "busca_filmes.html", context={"filmes":buscar_filmes_api(nome_filme),"filmes_vistos":filmes_vistos_detalhes})
+    id_filmes_vistos = [filme_visto.filme_id for filme_visto in filmes_vistos]
+    return render(request, "busca_filmes.html", context={"filmes":buscar_filmes_api(nome_filme),"id_filmes_vistos":id_filmes_vistos})
 
 def buscar_filme_id(filme_id):
     url = f"https://api.themoviedb.org/3/movie/{filme_id}?language=en-US"
