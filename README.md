@@ -2,7 +2,7 @@
 <h1 align="center">🎥 Biblioteca de Filmes 🎥</h1>
 
 ### 📍 Sobre o Projeto
-Web app de biblioteca de filmes desenvolvido em Django, que permite que o usuário organize os filmes que já assistiu. Ele se integra à api do TMDB para fornecer uma vasta lista de filmes e informações sobre.
+Web app de biblioteca de filmes desenvolvido em Django, que permite que o usuário organize os filmes que já assistiu. Ele se integra à API do TMDB para fornecer uma vasta lista de filmes e informações sobre.
 
 No app é possível:
 * Pesquisar e ver informações sobre filmes
