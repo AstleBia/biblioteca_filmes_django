@@ -39,14 +39,14 @@ def buscar_filmes(request):
     return render(request, "busca_filmes.html", context={"filmes":buscar_filmes_api(nome_filme),"id_filmes_vistos":id_filmes_vistos})
 
 def buscar_filme_id(filme_id):
-    url = f"https://api.themoviedb.org/3/movie/{filme_id}?language=en-US"
+    url = f"https://api.themoviedb.org/3/movie/{filme_id}?language=pt-BR"
     headers = {
         "accept": "application/json",
         "Authorization": f"Bearer {api_key}"
     }
     response = requests.get(url, headers=headers)
     filme = response.json()
-    filme_detalhes = {"titulo":filme["original_title"]}
+    filme_detalhes = {"titulo":filme["title"]}
     return filme_detalhes
 
 def adicionar_filme(request, filme_id):
